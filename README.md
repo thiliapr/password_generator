@@ -21,7 +21,7 @@ thiliapr/password_generator 是自由软件，遵循 [Affero GNU 通用公共许
 
 ## 快速开始
 ### 你需要什么
-- Python 3.7 或更高版本
+- Python 3.9 或更高版本（因为使用了泛型）
 - 一个好记但强的主密码
 - 你要生成密码的网站域名（如 `github.com`, `google.com`），我个人建议不要使用二级域名，而是使用一级域名，这样方便写（比如不用 `www.google.com`, 而是 `google.com`）
 
