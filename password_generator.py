@@ -32,6 +32,7 @@ SCRYPT_BYTEORDER = "big"  # 必须固定字节序，否则不同平台生成的�
 SCRYPT_N = 2 ** 16
 SCRYPT_R = 8
 SCRYPT_P = 2
+SCRYPT_DKLEN = 64
 SCRYPT_MAXMEM = 1024 ** 2  * 128  # 防止报内存不足错误（ValueError: [digital envelope routines] memory limit exceeded）
 # 某东方大国的一件重大历史事件，历史不应……算了，记不记随缘，毕竟没有人有义务记住历史
 SCRYPT_SALT_PREFIX = b"June 4, 1989"
@@ -112,6 +113,7 @@ def generate_password_by_scrypt(seed_str: str, modifier_str: str) -> Iterator[st
             r=SCRYPT_R,
             p=SCRYPT_P,
             maxmem=SCRYPT_MAXMEM,
+            dklen=SCRYPT_DKLEN
         ), byteorder=SCRYPT_BYTEORDER)
         for x in [seed_str, modifier_str]
     ]
